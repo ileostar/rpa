@@ -1,0 +1,39 @@
+{
+  "name": "rpa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "commit": "git add .&& git cz",
+    "push": "git push",
+    "prepare": "husky install",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.49.0",
+    "husky": "7.0.1",
+    "lint-staged": "^14.0.1",
+    "prettier": "3.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog-zh"
+    }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "src/**/*.{js,ts}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "cz-conventional-changelog-zh": "^0.0.2"
+  }
+}
